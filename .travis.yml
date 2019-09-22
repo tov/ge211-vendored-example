@@ -30,7 +30,7 @@ cache:
 
 before_script:
   - rm 3rdparty/ge211
-  - git clone --recursive https://github.com/tov/ge211.git 3rdparty/ge211
+  - git clone https://github.com/tov/ge211.git 3rdparty/ge211
   - cmake -S . -B build
 
 script:
