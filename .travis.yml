@@ -13,8 +13,6 @@ before_install:
   - |
     export PREFIX=${TRAVIS_BUILD_DIR}/../deps
     export PATH="${PREFIX}/bin:${PATH}"
-    export LD_LIBRARY_PATH="${PREFIX}/lib:${LD_LIBRARY_PATH}"
-    export DYLD_LIBRARY_PATH="${PREFIX}/lib:${DYLD_LIBRARY_PATH}"
     mkdir -p ${PREFIX}
 
 install:
