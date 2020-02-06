@@ -5,7 +5,7 @@ project(ge211_vendored_example CXX)
 
 add_subdirectory(3rdparty/ge211 EXCLUDE_FROM_ALL)
 
-add_executable(fw src/fw.cpp)
+add_executable(fw src/fw.cxx)
 target_link_libraries(fw ge211)
 set_target_properties(fw PROPERTIES
         CXX_STANDARD            14
