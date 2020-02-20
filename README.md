@@ -4,7 +4,7 @@ This repo contains a minimal, complete example of how a project can depend
 on [GE211] in a subdirectory, rather than by installing it on your system.
 The [`CMakeLists.txt`] expects `3rdparty/ge211/` to be (linked to)
 a subdirectory containing the [GE211] library. For the purposes of
-testing, we assume that we check out this repo as a submoduls of the
+testing, we assume that we check out this repo as a submodule of the
 GE211 repository at `examples/vendored/`, and `ge211` is a [symbolic link
 to `../../../`][the symlink].
 
