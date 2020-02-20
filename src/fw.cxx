@@ -39,7 +39,7 @@ struct Projectile
     Position position;
     Velocity velocity;
 
-    void update(double const dt);
+    void update(double dt);
 
     /// Creates a Projectile with the given Position and a random velocity
     /// within the given speed range and angle range.
@@ -60,7 +60,7 @@ struct Firework
     int star_color;
     double stage_time;
 
-    void update(double const dt);
+    void update(double dt);
     static Firework random(Random&, Projectile::Position);
 };
 
@@ -110,7 +110,7 @@ int main()
 
 // FUNCTION DEFINITIONS FOR MODEL
 
-void Projectile::update(double const dt)
+void Projectile::update(double dt)
 {
     position += velocity * dt;
     velocity += gravity_acceleration * dt;
@@ -126,7 +126,7 @@ Projectile::random(Random& rng, Position position,
     return {position, {speed * cos(radians), speed * sin(radians)}};
 }
 
-void Firework::update(double const dt)
+void Firework::update(double dt)
 {
     switch (stage) {
         case Stage::mortar:
