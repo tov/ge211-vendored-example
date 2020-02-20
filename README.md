@@ -22,10 +22,10 @@ To include a reference to [GE211], you should remove the
 symlink and add it as a Git submodule instead:
 
 ```console
-user@host repo$ cd 3rdparty
-user@host 3rdparty$ git rm ge211
-user@host 3rdparty$ git submodule add https://github.com/tov/ge211.git
-user@host 3rdparty$ git commit -m 'Added GE211 as submodule'
+user@host repo% cd 3rdparty
+user@host 3rdparty% git rm ge211
+user@host 3rdparty% git submodule add https://github.com/tov/ge211.git
+user@host 3rdparty% git commit -m 'Added GE211 as submodule'
 ```
 
 ## Including [GE211] by copy
@@ -35,12 +35,12 @@ repository, remove its `.git/` directory, and then add it to your own
 repository:
 
 ```console
-user@host repo$ cd 3rdparty
-user@host 3rdparty$ git rm ge211
-user@host 3rdparty$ git clone https://github.com/tov/ge211.git 
-user@host 3rdparty$ rm -Rf ge211/.git
-user@host 3rdparty$ git add ge211
-user@host 3rdparty$ git commit -m 'Vendored GE211'
+user@host repo% cd 3rdparty
+user@host 3rdparty% git rm ge211
+user@host 3rdparty% git clone https://github.com/tov/ge211.git
+user@host 3rdparty% rm -Rf ge211/.git
+user@host 3rdparty% git add ge211
+user@host 3rdparty% git commit -m 'Vendored GE211'
 ```
 
 [GE211]:
