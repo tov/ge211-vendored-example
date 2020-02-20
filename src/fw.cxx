@@ -95,6 +95,8 @@ struct Fireworks : Abstract_game
     View view;
     Dimensions initial_window_dimensions() const override;
     void draw(Sprite_set& sprites) override;
+    void draw_fireworks(Sprite_set& sprites) const;
+    void draw_stats(Sprite_set& sprites);
 
     // Controller
     bool is_paused = false;
@@ -220,11 +222,12 @@ Dimensions Fireworks::initial_window_dimensions() const
 
 void Fireworks::draw(Sprite_set& sprites)
 {
-    view.fps.reconfigure(Text_sprite::Builder(view.sans)
-                                 << setprecision(3)
-                                 << get_frame_rate());
-    sprites.add_sprite(view.fps, {10, 10});
+    draw_fireworks(sprites);
+    draw_stats(sprites);
+}
 
+void Fireworks::draw_fireworks(Sprite_set& sprites) const
+{
     for (Firework const& firework : model.fireworks) {
         switch (firework.stage) {
             case Firework::Stage::mortar:
@@ -244,6 +247,18 @@ void Fireworks::draw(Sprite_set& sprites)
                 break;
         }
     }
+}
+
+void Fireworks::draw_stats(Sprite_set& sprites)
+{
+    Dimensions const margin {20, 10};
+
+    view.fps.reconfigure(Text_sprite::Builder(view.sans)
+                                 << setprecision(3)
+                                 << get_frame_rate());
+
+    auto fps_posn  = Position{margin};
+    sprites.add_sprite(view.fps, fps_posn);
 }
 
 // FUNCTION DEFINITIONS FOR CONTROLLER
