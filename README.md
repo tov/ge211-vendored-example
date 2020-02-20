@@ -12,6 +12,10 @@ There are two strategies to replace the symlink with a copy of GE211 that
 doesn’t depend on the context of this repository: You can add a submodule
 reference or copy GE211’s code directly into your repository.
 
+(Note that `src/fw.cxx` is also a symlink to an example program in the
+vendored GE211 subdirectory.)
+
+
 ## Including [GE211] by reference
 
 To include a reference to [GE211], you should remove the
