@@ -28,7 +28,8 @@ user@host 3rdparty% git submodule add https://github.com/tov/ge211.git
 user@host 3rdparty% git commit -m 'Added GE211 as submodule'
 ```
 
-## Including [GE211] by copy
+
+## Including [GE211] by value
 
 To include a copy of [GE211], you should remove the symlink, clone the
 repository, remove its `.git/` directory, and then add it to your own
