@@ -80,6 +80,7 @@ struct View
 
     Font sans{"sans.ttf", 30};
     Text_sprite fps;
+    Text_sprite load;
     Circle_sprite mortar{mortar_radius, mortar_color};
     vector<Circle_sprite> stars;
 };
@@ -256,9 +257,17 @@ void Fireworks::draw_stats(Sprite_set& sprites)
     view.fps.reconfigure(Text_sprite::Builder(view.sans)
                                  << setprecision(3)
                                  << get_frame_rate());
+    view.load.reconfigure(Text_sprite::Builder(view.sans)
+                                  << setprecision(0) << fixed
+                                  << get_load_percent() << '%');
 
     auto fps_posn  = Position{margin};
     sprites.add_sprite(view.fps, fps_posn);
+
+    auto load_posn = Position{scene_dimensions.width, 0}
+            .down_left_by(margin)
+            .left_by(view.load.dimensions().width);
+    sprites.add_sprite(view.load, load_posn);
 }
 
 // FUNCTION DEFINITIONS FOR CONTROLLER
